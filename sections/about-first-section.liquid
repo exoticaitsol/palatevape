@@ -1,0 +1,60 @@
+<section class="about_us_sec about_top py_9">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <div class="about_img">
+                                <img src="{{ section.settings.image | img_url: 'master' }}" alt>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="about_txt_sec dummy_txt_of">
+                                <span>{{ section.settings.haed }}</span>
+                                <h2>{{ section.settings.title }}</h2>
+                               {{ section.settings.para }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            
+{% schema %}
+  {
+    "name": "About First Section ",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add to Image"
+        },
+      {
+        "type": "text",
+        "id": "haed",
+        "label":"Add Heading"
+      },
+         {
+        "type": "text",
+        "id": "title",
+        "label":"Add Title"
+      },
+         {
+        "type": "html",
+        "id": "para",
+        "label":"Add Description"
+      }
+     
+    ],
+     "presets": [
+    {
+      "name": "About First Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

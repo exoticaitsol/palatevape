@@ -1,0 +1,128 @@
+  <section class="testimonial_slider">
+                <div class="container">
+                    <div class="main_custom-txt">
+                        <div class="tittle_heading_say">
+                            <span>{{ section.settings.title }}</span>
+                            <h3>{{ section.settings.subtitle }}</h3>
+                        </div>
+                        <ul class="flex_arrow">
+                            <li class="slide_controls_1 text-left">
+                                <div
+                                    class="slide-prev slick-arrow slick-disabled"
+                                    aria-disabled="true"
+                                    style>
+                                    <img src="{{ section.settings.left_image | img_url: 'master' }}" alt="left" />
+                                </div>
+                                <div
+                                    class="slide-next slick-arrow"
+                                    aria-disabled="false"
+                                    style>
+                                    <img src="{{ section.settings.Right_image | img_url: 'master'}}" alt="right" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="slider_testimonial_sec">
+                       {% for block in section.blocks %}
+    <div class="slider_under_bx">
+        <div class="slider_under">
+            <div class="slider_txt">
+                <div class="img_slide">
+                    <img src="{{ block.settings.profile | img_url: 'master' }}" alt=""/>
+                    <div class="SectionHeader__Description Rte product-description-short">
+                        <p>{{ block.settings.description | truncate: 200  }}</p>
+                        <a class="read_more_less" href="#">Read More</a>
+                    </div>
+                    <div class="SectionHeader__Description Rte product-description-full" style="display:none;">
+                        <p>{{ block.settings.description  }}</p>
+                        <a class="read_more_less" href="#">Read Less</a>
+                    </div>
+                    <h3>{{ block.settings.name }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+                    </div>
+                </div>
+            </section>
+            <script>
+  
+               $('.read_more_less').on('click', function(e){
+        e.preventDefault();
+        var $descriptionShort = $(this).closest('.slider_under_bx').find('.product-description-short');
+        var $descriptionFull = $(this).closest('.slider_under_bx').find('.product-description-full');
+
+        if ($descriptionFull.is(':visible')) {
+            $descriptionFull.hide();
+            $descriptionShort.show();
+        } else {
+            $descriptionShort.hide();
+            $descriptionFull.show();
+        }
+    });
+              
+</script>
+{% schema %}
+  {
+    "name": "Testimonials",
+    "settings": [
+      {
+         "type": "text",
+        "id": "title",
+        "label": "title"
+      },
+      {
+         "type": "text",
+        "id": "subtitle",
+        "label": "subtitle"
+      },
+      {
+         "type": "image_picker",
+        "id": "left_image",
+        "label": "left image"
+      },
+      {
+         "type": "image_picker",
+        "id": "Right_image",
+        "label": "Right image"
+      }
+],
+    "blocks": [
+        {
+        "type": "testimonial",
+        "name": "testimonial",
+        "settings": [
+         {
+          "type": "image_picker",
+          "id": "profile",
+          "label": "Profile Picture"
+        },
+          {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+          {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        }
+]
+        }
+    ],
+    
+    "presets":[
+      {
+        "name": "Testimonials"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

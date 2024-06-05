@@ -1,0 +1,74 @@
+ <section
+                class="designed_vaping_Sec bg_style py_9"
+                style="background-image: url('{{ section.settings.bgimage | img_url: 'master'}}')">>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="vaping_img">
+                                <img src="{{ section.settings.image | img_url: 'master' }}" alt>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="desigred">
+                                <div class="under_Desigred_txt">
+                                    <h2>{{ section.settings.title }}</h2>
+                                    <p>{{ section.settings.subtitle }}</p>
+                                    <div class="desired_btn">
+                                        <a href="{{ section.settings.btnurl }}" class="theme_btn">{{ section.settings.btntext }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{% schema %}
+  {
+    "name": "Designed to give",
+    "settings": [
+      {
+         "type": "image_picker",
+        "id": "bgimage",
+        "label": "Bg image"
+      },
+      {
+         "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+         "type": "text",
+        "id": "title",
+        "label": "title"
+      },
+      {
+         "type": "text",
+        "id": "subtitle",
+        "label": "Sub title"
+      }
+      ,
+      {
+         "type": "text",
+        "id": "btntext",
+        "label": "button text"
+      } ,
+      {
+         "type": "url",
+        "id": "btnurl",
+        "label": "button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Designed to give"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

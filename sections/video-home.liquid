@@ -1,0 +1,86 @@
+<section class="hero_video_sec py_9">
+  <div class="container">
+        <div class="hero_video_inner">
+          <div class="hero_video">
+ <video id="myVideoMine" poster="https://cdn.shopify.com/s/files/1/0855/1363/4075/files/eeeee.png?v=1706531413" type="video/mp4" preload="" playsinline="" loop="" style="visibility: visible;">
+                  <source src="{{ section.settings.image }}">
+               </video>
+            <div class="stopVideo">dddd</div>
+            <div class="videoPlayIcon">
+              <img src="https://cdn.shopify.com/s/files/1/0855/1363/4075/files/icon_play.png?v=1705559917" />
+            </div>
+           
+          </div>
+        <div class="hero_video_content">
+        <div class="txt_tx_f">
+            <h2><span>{{ section.settings.head }} </span>{{ section.settings.title }}</h2>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    let vid = document.getElementById("myVideoMine");
+    function playVid() { 
+      vid.play();
+      $('.videoPlayIcon').addClass('hide');
+      // $('.stopVideo').css("display","block");
+    } 
+    
+    function pauseVid() { 
+      vid.pause();
+      $('.videoPlayIcon').removeClass('hide');
+    } 
+
+    $('.videoPlayIcon').click(function(){
+      playVid();
+      
+    });
+
+    $('.stopVideo').click(function(){
+      pauseVid();
+      $(".videoPlayIcon").css("display","block");
+    });
+    $(".videoPlayIcon").click(function(){
+    $(".videoPlayIcon").hide();
+      
+  });
+  });
+</script> 
+
+
+{% schema %}
+  {
+    "name": " Video Home ",
+    "settings": [
+      {
+          "type": "url",
+          "id": "image",
+          "label": "Add Image Link"
+        },
+        {
+        "type": "text",
+        "id": "head",
+        "label":"Add Heading"
+      } ,
+      {
+        "type": "text",
+        "id": "title",
+        "label":"Add Paragraph"
+      } 
+    ],
+     "presets": [
+    {
+      "name": " Video Home"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

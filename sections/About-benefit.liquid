@@ -1,0 +1,67 @@
+ <section class="why_choose_our bg_style py_9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="choose_left_img_">
+                                <img src="{{ section.settings.image | img_url: 'master' }}" alt>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="choose_under_txt">
+                                <div class="main_choose_txt ">
+                                    <span>{{ section.settings.head }}</span>
+                                    <h2>{{ section.settings.para }}</h2>
+                                    <ul class="ul_flex_choose">
+                                      {{ section.settings.htm }}
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+                                       
+{% schema %}
+  {
+    "name": "About-benefit",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add to Image"
+        },
+      {
+        "type": "text",
+        "id": "head",
+        "label":"Add Heading"
+      },
+        
+         {
+        "type": "textarea",
+        "id": "para",
+        "label":"Add Description"
+      },
+      {
+        "type": "html",
+        "id": "htm",
+        "label":"Add Description"
+      } 
+      
+     
+    ],
+     "presets": [
+    {
+      "name": "About-benefit"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

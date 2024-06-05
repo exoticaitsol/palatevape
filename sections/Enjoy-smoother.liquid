@@ -1,0 +1,62 @@
+<section class="about_us_sec our_story py_9">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="about_txt_sec">
+                                <span>{{ section.settings.head }}</span>
+                                <h2>{{ section.settings.title }}</h2>
+                               <p>{{ section.settings.para }}</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about_img">
+                                <img src="{{ section.settings.image | img_url: 'master' }}" alt>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+                      
+{% schema %}
+  {
+    "name": "About Enjoy Smoother",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add to Image"
+        },
+      {
+        "type": "text",
+        "id": "head",
+        "label":"Add Heading"
+      },
+         {
+        "type": "text",
+        "id": "title",
+        "label":"Add Title"
+      },
+         {
+        "type": "textarea",
+        "id": "para",
+        "label":"Add Description"
+      }
+     
+    ],
+     "presets": [
+    {
+      "name": "About Enjoy Smoother"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,71 @@
+<section class="about_us_sec py_9 pt-0">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <div class="about_img">
+                                <img src="{{ section.settings.image | img_url: 'original' }}" alt>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="about_txt_sec">
+                                <span>{{ section.settings.title }}</span>
+                                    <h2>{{ section.settings.sub_head }}</h2>
+                                <p>{{ section.settings.des }}</p>
+                                <div class="about_btn">
+                                    <a href="{{ section.settings.Btn_url }}" class="theme_btn">{{ section.settings.Btn_text }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+{% schema %}
+  {
+    "name": "About Home ",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add Image"
+        },
+      {
+        "type": "text",
+        "id": "title",
+        "label":"Add Heading"
+      },
+      {
+        "type": "text",
+        "id": "sub_head",
+        "label":"Add Sub Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "des",
+        "label":"Add Des"
+      },
+      {
+        "type": "text",
+        "id": "Btn_text",
+        "label":"Add Text Button"
+      } ,
+      {
+        "type": "url",
+        "id": "Btn_url",
+        "label":"Add URL Button"
+      }
+    ],
+     "presets": [
+    {
+      "name": "About Home"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,68 @@
+<section class=" our_feature latest_product py_9">
+                <div class="container">
+                    <div class="flex_categry">
+                        <div class="under_txt_fl">
+                            <h2>{{ section.settings.title }}</h2>
+                        </div>
+                        <div class="category_btn">
+                            <a href="{{ section.settings.btn_url }}" class="theme_btn">{{ section.settings.btn_text }}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                       {% for product in section.settings.product_lists %}
+                        <div class="col-md-3">
+                            <div class="thermal_Sec">
+                                <div class="img_thermal">
+                                    <a href="{{ product.url}}" ><img src="{{ product.featured_image | img_url: 'master' }}" alt></a>
+                                </div>
+                                <div class="txt_thermal">
+                                    <p>{{ product.title}}</p>
+                                    <h2>RabBeats</h2>
+                                </div>
+                            </div>
+                        </div>
+{% endfor %}
+
+                    </div>
+                </div>
+            </section>
+
+{% schema %}
+  {
+    "name": "Latest Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+         "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      },
+      {
+         "type": "url",
+        "id": "btn_url",
+        "label": "button url"
+      },
+       {
+    "id":"product_lists",
+    "type":"product_list",
+    "label":"Products list"
+    }
+    ],
+  
+    "presets": [
+      {
+        "name": "Latest Products"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

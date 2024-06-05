@@ -1,0 +1,81 @@
+ 
+
+<section
+                class="hero_banner bg_style"
+                style="background-image: url('{{ section.settings.image_bg | img_url: 'original' }}')">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="home_left_sec">
+                                <div class="under_home_sec">
+                                    <span>{{ section.settings.title }}</span>
+                                    <h1>{{ section.settings.sub_head }}</h1>
+                                    <p>{{ section.settings.des }}</p>
+                                    <div class="banner_btn">
+                                        <a href="{{ section.settings.Btn_url }}" class="theme_btn">{{ section.settings.Btn_text }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="right_img_banner">
+                                <img src="{{ section.settings.image | img_url: 'original' }}" alt>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{% schema %}
+  {
+    "name": "Banner Home ",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_bg",
+          "label": "Add to Image BG"
+        },
+      {
+        "type": "text",
+        "id": "title",
+        "label":"Add to Heading"
+      },
+      {
+        "type": "text",
+        "id": "sub_head",
+        "label":"Add to Sub Heading"
+      },
+      {
+        "type": "text",
+        "id": "des",
+        "label":"Add to Des"
+      },
+      {
+        "type": "text",
+        "id": "Btn_text",
+        "label":"Add to Text Button"
+      } ,
+      {
+        "type": "url",
+        "id": "Btn_url",
+        "label":"Add to URL Button"
+      },
+       {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add to Image"
+        }
+    ],
+     "presets": [
+    {
+      "name": "Banner Home"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

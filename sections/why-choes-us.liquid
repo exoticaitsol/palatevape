@@ -1,0 +1,89 @@
+ <section class="why_choose_banner bg_style py_9" style="background-image: url('{{ section.settings.bg_image | img_url: 'master' }}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="choose_left_img">
+                                <img src="{{ section.settings.image | img_url: 'master' }}" alt>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="choose_under_txt">
+                                <div class="main_cntnt_un">
+                                    <span>{{ section.settings.title }}</span>
+                                    <h2>{{ section.settings.subtitle }}</h2>
+                                    <ul class="ul_flex_choose">
+                                        {% for block in section.blocks %}
+                                        <li>
+                                            <div class="under_li_why">
+                                                <h3>{{ block.settings.heading }}</h3>
+                                                <p>{{ block.settings.subheading }}</p>
+                                            </div>
+                                        </li>
+                                      {% endfor %}
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+{% schema %}
+  {
+    "name": "why choose us",
+    "settings": [
+       {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      },
+       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+       {
+        "type": "text",
+        "id": "title",
+        "label": "title"
+      },
+       {
+        "type": "text",
+        "id": "subtitle",
+        "label": "subtitle"
+      }
+    ],
+    "blocks": [
+  {
+    "type": "Chooseus",
+    "name": "Choose us",
+    "settings": [
+        {
+        "type": "text",
+        "id": "heading",
+        "label": "heading"
+      },
+         {
+        "type": "text",
+        "id": "subheading",
+        "label": "subheading"
+      }
+    ]
+  }
+    ],
+     "presets": [
+    {
+      "name": "Why choose us"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

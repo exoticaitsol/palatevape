@@ -1,0 +1,39 @@
+        <section
+                class="about_page_banner bg_style"
+                style="background-image: url('{{ section.settings.image | img_url: 'master' }}')">
+                <div class="container">
+                    <div class="about_un_txt">
+                        <h2>{{ section.settings.title }}</h2>
+                    </div>
+                </div>
+            </section>
+
+{% schema %}
+  {
+    "name": "About Banner ",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add to Image"
+        },
+      {
+        "type": "text",
+        "id": "title",
+        "label":"Add Heading"
+      }
+     
+    ],
+     "presets": [
+    {
+      "name": "About Banner"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

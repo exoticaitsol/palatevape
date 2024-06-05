@@ -1,0 +1,62 @@
+   <section class="what_we_do_Sec py_9 pt_0">
+                <div class="container">
+                    <div class="main_what_we">
+                        <div class="under_what_We_do">
+                            <img src="{{ section.settings.image | img_url: 'master' }}" alt>
+                        </div>
+                        <div class="txt_main_do">
+                            <span>{{ section.settings.title }}</span>
+                            <h2>{{ section.settings.subtitle }}</h2>
+                            <div class="view_what_btn">
+                                <a href="{{ section.settings.btn_url }}" class="theme_btn">{{ section.settings.btn_text }}</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+{% schema %}
+  {
+    "name": "What we Do",
+    "settings": [
+      {
+         "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+       {
+         "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+       {
+         "type": "text",
+        "id": "subtitle",
+        "label": "SubTitle"
+      },
+       {
+         "type": "text",
+        "id": "btn_text",
+        "label": "button text"
+      },
+       {
+         "type": "url",
+        "id": "btn_url",
+        "label": "button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "What We Do"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

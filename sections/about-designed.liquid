@@ -1,0 +1,47 @@
+    <section
+                class="designed_exper bg_style py_9"
+                style="background-image: url('{{ section.settings.image | img_url: 'master' }}')">
+                <div class="container">
+                    <div class="designed_e_txt">
+                        <h2>{{ section.settings.head }}</h2>
+                        <p>{{ section.settings.para }}</p>
+                    </div>
+                </div>
+            </section>
+
+                             
+{% schema %}
+  {
+    "name": "About-designed",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add Image"
+        },
+      {
+        "type": "text",
+        "id": "head",
+        "label":"Add Heading"
+      },
+        
+         {
+        "type": "textarea",
+        "id": "para",
+        "label":"Add Description"
+      }
+     
+    ],
+     "presets": [
+    {
+      "name": "About-designed"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
